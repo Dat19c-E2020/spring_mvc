@@ -22,4 +22,8 @@ public class AnimalService {
 
         return animals;
     }
+
+    public void create(Animal animal){
+        animalRepository.create(animal);
+    }
 }

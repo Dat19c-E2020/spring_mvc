@@ -23,4 +23,9 @@ public class AnimalRepository {
     public List<Animal> readAll(){
         return animals;
     }
+
+    //add new animal to collection
+    public void create(Animal animal){
+        animals.add(animal);
+    }
 }
