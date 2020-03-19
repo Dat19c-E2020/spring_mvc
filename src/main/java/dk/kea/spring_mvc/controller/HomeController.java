@@ -54,8 +54,14 @@ public class HomeController
     //delete animal
     @GetMapping("/delete/{id}")
     public String delete(@PathVariable("id") long id, Model model){
+        /* if (animalService.delete(id))
+            model.addAttribute("status", "element " + id + " slettet";
+            else
+            model.addAttribute("status", "element " + id + " kunne ikke slettes!";
+         */
         animalService.delete(id);
         //burde fange returværdi fra kald og sende statusbesked med ud på websiden
+        //model.addAttribute("status", returnværdi af kald)
         return "redirect:/";
     }
 }
