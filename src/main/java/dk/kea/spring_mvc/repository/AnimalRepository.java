@@ -48,7 +48,7 @@ public class AnimalRepository implements ICrudRepository<Animal>{
         for (int i=0; i<animals.size();i++){
             if (animals.get(i).getId() == animal.getId()){
                 //opdater element (erstat med nye udgave)
-                // animals.set(i, animal);
+                animals.set(i, animal);
                 return true;
             }
         }
