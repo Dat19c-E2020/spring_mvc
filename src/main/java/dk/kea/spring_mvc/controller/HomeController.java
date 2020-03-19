@@ -7,6 +7,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
 @Controller
@@ -34,4 +35,19 @@ public class HomeController
         return "redirect:/";
     }
 
+    //use pathvariable to map id from list on web page
+    @GetMapping("/update/{id}")
+    public String update(@PathVariable("id") long id, Model model){
+        //tilføj Animal med id til model view
+        model.addAttribute("anim", animalService.read(id));
+        return "update";
+    }
+
+    //update animal
+    @PostMapping("/update")
+    public String update(@ModelAttribute Animal anim){
+        //update by using update service
+        animalService.update(anim);
+        return "redirect:/";
+    }
 }

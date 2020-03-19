@@ -26,4 +26,15 @@ public class AnimalService {
     public void create(Animal animal){
         animalRepository.create(animal);
     }
+
+    public boolean update(Animal animal){
+
+        boolean updateOK = animalRepository.update(animal);
+        return updateOK;
+    }
+
+    public Animal read(long id){
+        return animalRepository.read(id);
+    }
+
 }
