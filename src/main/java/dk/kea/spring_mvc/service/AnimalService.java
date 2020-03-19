@@ -37,4 +37,8 @@ public class AnimalService {
         return animalRepository.read(id);
     }
 
+    public boolean delete(Long id){
+        return animalRepository.delete(id);
+    }
+
 }

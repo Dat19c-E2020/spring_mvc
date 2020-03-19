@@ -50,4 +50,12 @@ public class HomeController
         animalService.update(anim);
         return "redirect:/";
     }
+
+    //delete animal
+    @GetMapping("/delete/{id}")
+    public String delete(@PathVariable("id") long id, Model model){
+        animalService.delete(id);
+        //burde fange returværdi fra kald og sende statusbesked med ud på websiden
+        return "redirect:/";
+    }
 }

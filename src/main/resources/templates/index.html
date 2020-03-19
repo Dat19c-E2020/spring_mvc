@@ -19,6 +19,7 @@
             <td th:text="${animal.name}">Motorstruds</td>
             <td th:text="${animal.species}">Motoriseret fugl</td>
             <td><a th:href="@{'/update/' + ${animal.id}}">Opdater</a></td>
+            <td><a th:href="@{'/delete/' + ${animal.id}}">Slet</a></td>
         </tr>
     </table>
 

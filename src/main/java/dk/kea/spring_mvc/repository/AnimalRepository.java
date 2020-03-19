@@ -58,6 +58,15 @@ public class AnimalRepository implements ICrudRepository<Animal>{
 
     @Override
     public boolean delete(long id) {
+        //find og slet element med id
+        int i=0;
+        while (i<animals.size()){
+            if (animals.get(i).getId()==id){
+                animals.remove(i);
+                return true;
+            }
+            i++;
+        }
         return false;
     }
 }
